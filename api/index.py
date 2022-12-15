@@ -14,11 +14,11 @@ app = Flask(__name__)
 chatgpt = ChatGPT()
 
 # domain root
-@app.route('/')
-def home():
-    return 'Hello, World!'
+# @app.route('/')
+# def home():
+#     return 'Hello, World!'
 
-@app.route("/webhook", methods=['POST'])
+@app.route("/", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
